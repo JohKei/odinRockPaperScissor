@@ -65,18 +65,16 @@ function playRound(user,computer){
         alert(`You Won! you chose ${user} and the computer chose ${computer}`)
         return userScore+=1
     }
-    
 }
-//starGame function to playRound until user or computer reaches score of 5
-
+//starGame function to playRound until user or computer reaches score of 5 (while user && computer <=5)
 function startGame(){
-    while (userScore<=5 || computerScore<=5){
+    while (userScore<=5 && computerScore<=5){
         playRound()
         if (userScore==5){
             alert(`You Won! you reached ${userScore} Points while the computer reached ${computerScore} Points!`)
             break
         }else if(computerScore==5){
-            alert('You Won! you reached ${userScore} Points while the computer reached ${computerScore} Points!')
+            alert(`You Lost! you reached ${userScore} Points while the computer reached ${computerScore} Points!`)
         }
     }
 }
