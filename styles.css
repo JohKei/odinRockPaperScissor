@@ -7,12 +7,15 @@ body{
     height: 1024px;
     background-image: url(./images/DALL·E\ 2023-03-01\ 12.13.43\ -\ anime\ style\ battle\ ground.png);
     margin: auto;
-    background-color: black;
-    
+    background-color: black;    
 }
-
-.buttonContainer{
-    position: absolute;
-    
-
+/* header */
+/* Score Board */
+/* Button Container */
+.rockBtn,
+.paperBtn,
+.scissorBtn{
+    height: 300px;
+    width: auto;
 }
+/* footer */

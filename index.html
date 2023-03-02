@@ -9,13 +9,32 @@
 </head>
 <body>
     <div class="actualBody">
-        <div class="scoreBoard">
-            
+        <!-- header -->
+        <div class="header">
+
         </div>
+        <!-- scoreBoard -->
+        <div class="scoreBoard">
+            <div id="playerScore-el">Player Score 0</div>
+            <div id="computerScore-el">Computer Score</div>
+        </div>
+        <!-- description what happened this round -->
+        <div>
+            <p id="roundStatus-el">choose your weapon</p>
+            <p id="lastGame-el">Game history: </p>
+        </div>
+        <!-- buttons -->
         <div class="buttonContainer">
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissor</button>
+            <img src="./images/rock.PNG" id="rock-btn" class="rockBtn" alt="rock">
+            <img src="./images/paper.PNG" id="paper-btn" class="paperBtn" alt="paper">
+            <img src="./images/scissor.PNG" id="scissor-btn" class="scissorBtn" alt="scissor">
+        </div>
+        <div>
+            <button id="restart-btn" class="restartBtn">restart Game</button>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+
         </div>
     </div>
     <script src="index.js"></script>
