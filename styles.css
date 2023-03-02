@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+}
+
+.actualBody{
+    width: 1024px;
+    height: 1024px;
+    background-image: url(./images/DALL·E\ 2023-03-01\ 12.13.43\ -\ anime\ style\ battle\ ground.png);
+    margin: auto;
+    background-color: black;
+    
+}
+
+.buttonContainer{
+    position: absolute;
+    
+
+}
