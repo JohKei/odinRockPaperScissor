@@ -86,17 +86,17 @@ computerScoreEl.textContent = computerScore
 //when pressed rock,paper,scissor run playRound(selection)
 rockBtn.addEventListener("click", function(){
     playRound(selections[0])
+    btnAnimation(rockBtn)
 })
 paperBtn.addEventListener("click", function(){
     playRound(selections[1])
+    btnAnimation(paperBtn)
 })
 scissorBtn.addEventListener("click", function(){
     playRound(selections[2])
+    btnAnimation(scissorBtn)
+})
 
-})
-restartBtn.addEventListener("click",function(){
-    restartGame()
-})
 //update scoreBoard after each round function
 function updateScoreEl(){
     playerScoreEl.textContent = userScore
@@ -109,14 +109,19 @@ function restartGame(){
     updateScoreEl()
 }
 
-function lastGame(string){
-    lastGameEl.textContent = "In the last Game " + string
-}
-//#todo if player presses button and theres already a winner: make the play restart 
-//and instantly update from scratch
-//check if already won function
+//force restart if someone already won. Will be unnecessary later
 function forceRestart(){
     if (userScore == 5 || computerScore == 5){
         restartGame()
     }
 }
+
+// btnAnimation ()
+function btnAnimation(x){
+    x.classList.add("buttonActive")
+    setTimeout(() => { x.classList.remove("buttonActive")
+    }, 150);
+}   
+// add class .buttonActive to buttons 
+// for a time period of 0,7 sec
+// after 0,7 sec remove .buttonActive from buttons
