@@ -28,37 +28,49 @@ function playRound(user){
         computerScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("paper","computer")
+        if(computerScore<5){
+            showGif("paper","computer")
+        }
     }else if(user=="rock"&&computer=="scissor"){
         roundStatusEl.textContent=`You Won! you chose ${user} and the computer chose ${computer}`
         userScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("rock","user")
+        if(userScore<5){
+            showGif("rock","user")
+        }
     }else if(user=="paper"&&computer=="rock"){
         roundStatusEl.textContent=`You Won! you chose ${user} and the computer chose ${computer}`
         userScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("paper","user")
+        if(userScore<5){
+            showGif("paper","user")
+        }
     }else if(user=="paper"&&computer=="scissor"){
         roundStatusEl.textContent=`You Lost! you chose ${user} and the computer chose ${computer}`
         computerScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("scissor","computer")
+        if(computerScore<5){
+            showGif("scissor","computer")
+        }
     }else if(user=="scissor"&&computer=="rock"){
         roundStatusEl.textContent=`You Lost! you chose ${user} and the computer chose ${computer}`
         computerScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("rock","computer")
+        if(computerScore<5){
+            showGif("rock","computer")
+        }
     }else if(user=="scissor"&&computer=="paper"){
         roundStatusEl.textContent=`You Won! you chose ${user} and the computer chose ${computer}`
         userScore+=1
         updateScoreEl()
         checkWinner()
-        showGif("scissor","user")
+        if(userScore<5){
+            showGif("scissor","user")
+        }
     }
 }
 
@@ -67,13 +79,14 @@ function checkWinner(){
         let message = (`You Won! you reached ${userScore} Points while the computer reached ${computerScore} Points!`) 
         lastGame(message)
         gameOver()
+        callBackGif()
     }else if(computerScore==5){
         let message = (`You Lost! you reached ${userScore} Points while the computer reached ${computerScore} Points!`)
         lastGame(message)
         gameOver()
+        callBackGif()
     }   
 }
-
 //step 2
 
 //select html elements
@@ -94,19 +107,16 @@ rockBtn.addEventListener("click", function(){
     callBackGif()
     playRound(selections[0])
     btnAnimation(rockBtn)
-    
 })
 paperBtn.addEventListener("click", function(){
     callBackGif()
     playRound(selections[1])
     btnAnimation(paperBtn)
-    
 })
 scissorBtn.addEventListener("click", function(){
     callBackGif()
     playRound(selections[2])
     btnAnimation(scissorBtn)
-    
 })
 restartBtn.addEventListener("click", function(){
     restartGame()
@@ -151,14 +161,20 @@ const drawGif = document.querySelector("#drawGif")
 function reverseGif(x){
     x.style.transform = "scaleX(-1)"; //this works
 }
+function unreverseGif(x){
+    x.style.transform = "scaleX(1)";
+}
 //function show rock gif if rock wins the round
 //check if user or computer won -> reverse if needed
 function showGif(whatGif,whatWinner){
     if ( whatGif == "rock" && whatWinner == "computer"){
+        unreverseGif(rockGif)
         rockGif.style.visibility="visible"
     }else if ( whatGif == "scissor" && whatWinner == "computer"){
+        unreverseGif(scissorGif)
         scissorGif.style.visibility="visible"
     }else if ( whatGif == "paper" && whatWinner == "computer"){
+        unreverseGif(paperGif)
         paperGif.style.visibility="visible"
     }else if( whatGif == "rock" && whatWinner == "user"){
         reverseGif(rockGif)
@@ -179,3 +195,6 @@ function callBackGif(){
     paperGif.style.visibility="hidden"
     drawGif.style.visibility="hidden"
 }
+//#todo start gif from scratch
+    //achieve that by adding the src to the img elements and remove them later
+    //doing that makes the unreverseGif() useless i guess
