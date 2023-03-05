@@ -21,7 +21,7 @@ function playRound(user){
     let computer=getComputerChoice(computerSelection)
     
     if (user==computer){
-        drawGif.style.visibility="visible"
+        drawGif.src="./images/draw.gif"
         roundStatusEl.textContent=`It's a Draw! You choose ${user} and the computer choose ${computer}!`
     }else if(user=="rock"&&computer=="paper"){
         roundStatusEl.textContent=`You Lost! you chose ${user} and the computer chose ${computer}`
@@ -168,33 +168,34 @@ function unreverseGif(x){
 //check if user or computer won -> reverse if needed
 function showGif(whatGif,whatWinner){
     if ( whatGif == "rock" && whatWinner == "computer"){
+        //unreverseGif(rockGif)
+        rockGif.src="./images/dekuRockPunch.gif"
         unreverseGif(rockGif)
-        rockGif.style.visibility="visible"
     }else if ( whatGif == "scissor" && whatWinner == "computer"){
+        //unreverseGif(scissorGif)
+        scissorGif.src="./images/scissorCut.gif"
         unreverseGif(scissorGif)
-        scissorGif.style.visibility="visible"
     }else if ( whatGif == "paper" && whatWinner == "computer"){
+        //unreverseGif(paperGif)
+        paperGif.src="./images/paperWin.gif"
         unreverseGif(paperGif)
-        paperGif.style.visibility="visible"
     }else if( whatGif == "rock" && whatWinner == "user"){
+        rockGif.src="./images/dekuRockPunch.gif"
         reverseGif(rockGif)
-        rockGif.style.visibility="visible"
     }else if ( whatGif == "scissor" && whatWinner == "user"){
+        scissorGif.src="./images/scissorCut.gif"
         reverseGif(scissorGif)
-        scissorGif.style.visibility="visible"
     }else if ( whatGif == "paper" && whatWinner == "user"){
-        reverseGif(paperGif)
-        paperGif.style.visibility="visible"
+        paperGif.src="./images/paperWin.gif"
+        reverseGif(paperG)
     }
 }
 
 //hide gifs before each round again
 function callBackGif(){
-    rockGif.style.visibility="hidden"
-    scissorGif.style.visibility="hidden"
-    paperGif.style.visibility="hidden"
-    drawGif.style.visibility="hidden"
+    rockGif.src=""
+    scissorGif.src=""
+    paperGif.src=""
+    drawGif.src=""
+    
 }
-//#todo start gif from scratch
-    //achieve that by adding the src to the img elements and remove them later
-    //doing that makes the unreverseGif() useless i guess

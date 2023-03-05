@@ -41,28 +41,24 @@ body{
     width: 300px;
     height: auto;
     border-radius: 10px;
-    visibility: hidden;
 }
 .scissorCutGif{
     position: absolute;
     width: 300px;
     height: auto;
     border-radius: 10px;
-    visibility: hidden;
 }
 .paperWinGif{
     position: absolute;
     width: 300px;
     height: auto;
     border-radius: 10px;
-    visibility: hidden;
 }
 .drawGif{
     position: absolute;
     width: 300px;
     height: auto;
     border-radius: 10px;
-    visibility: hidden;
 }
 
 /* Button Container */
