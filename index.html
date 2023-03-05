@@ -11,6 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- introPopup -->
+    <div class="introPopup">
+        
+    </div>
+    <!-- gameEndPopup -->
+    <div id="gameOver" class="gameEndPopup">
+        <p id="lastGame-el">Game history: No history yet</p>
+        <button id="restart-btn">restart game</button>
+    </div>
+
     <div class="actualBody">
 
         <!-- header -->
@@ -24,13 +34,22 @@
                 <h2>ヒーロー</h2>
                 <h2>(hero)</h2>
                 <h2 id="playerScore-el" class="score">Player Score 0</h2>
-            </div>
-            <img src="images/luffyRockPunch.gif" class="gif" id="gif-el">
+            </div class="gifContainer">
+                <img src="images/dekuRockPunch.gif" class="rockPunchGif" id="dekuRockPunchGif">
+                <img src="images/scissorCut.gif" class="scissorCutGif" id="zenitsuScissorCut">
+                <img src="images/paperWin.gif" class="paperWinGif" id="paperWinGif">
+                <img src="images/draw.gif" class="drawGif" id="drawGif">
             <div>
                 <h2>悪党</h2>
                 <h2>(villain)</h2>
                 <h2 id="computerScore-el" class="score">Computer Score</h2>
             </div>
+        </div>
+
+         <!-- description what happened this round -->
+        <div class="descriptionContainer">
+            <p id="roundStatus-el" class="description">choose your Weapon</p>
+          
         </div>
 
         <!-- buttons -->
@@ -41,12 +60,6 @@
                 <img src="./images/paper.PNG" id="paper-btn" class="paperBtn" alt="paper">
                 <img src="./images/scissor.PNG" id="scissor-btn" class="scissorBtn" alt="scissor">
             </div>
-        </div>
-
-        <!-- description what happened this round -->
-        <div class="descriptionContainer">
-            <p id="roundStatus-el" class="description">choose your weapon</p>
-    <!--    <p id="lastGame-el">Game history: No history yet</p>  -->        
         </div>
 
         <!-- footer -->
