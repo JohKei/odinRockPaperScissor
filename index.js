@@ -76,12 +76,12 @@ function playRound(user){
 
 function checkWinner(){
     if (userScore==5){
-        let message = (`You Won! you reached ${userScore} Points while the computer reached ${computerScore} Points!`) 
+        let message = (`You Won! you reached ${userScore} Points while the Villain reached ${computerScore} Points!`) 
         lastGame(message)
         gameOver()
         callBackGif()
     }else if(computerScore==5){
-        let message = (`You Lost! you reached ${userScore} Points while the computer reached ${computerScore} Points!`)
+        let message = (`You Lost! you reached ${userScore} Points while the Villain reached ${computerScore} Points!`)
         lastGame(message)
         gameOver()
         callBackGif()
@@ -132,6 +132,7 @@ function restartGame(){
     computerScore = 0
     updateScoreEl()
     gameOverDiv.style.visibility="hidden"
+    mainBodyEl.style.visibility="visible"
     roundStatusEl.textContent = "Choose your Weapon"       
 
 }
@@ -149,10 +150,11 @@ function lastGame(x){
 //gameOver Popup function
 function gameOver(){
     gameOverDiv.style.visibility="visible"
+    mainBodyEl.style.visibility="hidden"
 }
 
 //gif 
-
+const mainBodyEl = document.querySelector("#mainBodyEl")
 const rockGif = document.querySelector("#dekuRockPunchGif")
 const scissorGif = document.querySelector("#zenitsuScissorCut")
 const paperGif = document.querySelector("#paperWinGif")
@@ -197,5 +199,4 @@ function callBackGif(){
     scissorGif.src=""
     paperGif.src=""
     drawGif.src=""
-    
 }
