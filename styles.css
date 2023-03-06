@@ -10,7 +10,7 @@ body{
 .actualBody{
     width: 1024px;
     height: 1024px;
-    background-image: url(./images/DALL·E\ 2023-03-01\ 12.13.43\ -\ anime\ style\ battle\ ground.png);
+    background-image: url(./images/newBackGround2.jpg);
     margin: auto;
     background-color: black;    
     display: flex;
@@ -21,7 +21,6 @@ body{
 }
 .readability{
     background-color: white;
-    opacity: 0.8;
     color: black;
     border-radius: 10px;
     width: fit-content;
@@ -84,13 +83,12 @@ body{
     height: 200px;
     width: auto;
     border-radius: 10px;
-    opacity: 0.5;
 }
 
 .buttonActive{
     transform: scale(1.1);
-    border-color: blue;
-    box-shadow: 0 0 3rem blue;
+    border-color: #d9c516;
+    box-shadow: 0 0 3rem #d9c516;
 }
 
 .restartBtn{
@@ -105,12 +103,13 @@ body{
 }
 
 .descriptionContainer{
-    height: 200px;
-    display: flex;
-    align-items: end;
+    display: flex;    
 }
 /* footer */
-
+.repoLink{
+    color: black;
+    text-decoration: none;
+}
 /* intro Popup */
 .introPopup{
     position: fixed;

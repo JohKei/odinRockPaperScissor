@@ -76,11 +76,13 @@ function playRound(user){
 
 function checkWinner(){
     if (userScore==5){
-        let message = (`You Won! you reached ${userScore} Points while the Villain reached ${computerScore} Points!`) 
+        gameOverHel.textContent=`You Won!`
+        let message = (`You reached ${userScore} Points while the Villain reached ${computerScore} Points!`) 
         lastGame(message)
         gameOver()
         callBackGif()
     }else if(computerScore==5){
+        gameOverHel.textContent=`Game Over!`
         let message = (`You Lost! you reached ${userScore} Points while the Villain reached ${computerScore} Points!`)
         lastGame(message)
         gameOver()
@@ -99,6 +101,7 @@ const paperBtn = document.querySelector("#paper-btn")
 const scissorBtn = document.querySelector("#scissor-btn")
 const restartBtn = document.querySelector("#restart-btn")
 const gameOverDiv = document.querySelector("#gameOver")
+const gameOverHel = document.querySelector("#gameOverH-el")
 //player&computerScore text content = score
 playerScoreEl.textContent = userScore
 computerScoreEl.textContent = computerScore
@@ -170,26 +173,20 @@ function unreverseGif(x){
 //check if user or computer won -> reverse if needed
 function showGif(whatGif,whatWinner){
     if ( whatGif == "rock" && whatWinner == "computer"){
-        //unreverseGif(rockGif)
-        rockGif.src="./images/dekuRockPunch.gif"
-        unreverseGif(rockGif)
+        rockGif.src="./images/computerRock.gif"
     }else if ( whatGif == "scissor" && whatWinner == "computer"){
-        //unreverseGif(scissorGif)
-        scissorGif.src="./images/scissorCut.gif"
-        unreverseGif(scissorGif)
+        scissorGif.src="./images/computerScissor.gif"
     }else if ( whatGif == "paper" && whatWinner == "computer"){
         //unreverseGif(paperGif)
         paperGif.src="./images/paperWin.gif"
         unreverseGif(paperGif)
     }else if( whatGif == "rock" && whatWinner == "user"){
-        rockGif.src="./images/dekuRockPunch.gif"
-        reverseGif(rockGif)
+        rockGif.src="./images/userRock.gif"
     }else if ( whatGif == "scissor" && whatWinner == "user"){
-        scissorGif.src="./images/scissorCut.gif"
-        reverseGif(scissorGif)
+        scissorGif.src="./images/userScissor.gif"
     }else if ( whatGif == "paper" && whatWinner == "user"){
         paperGif.src="./images/paperWin.gif"
-        reverseGif(paperG)
+        reverseGif(paperGif)
     }
 }
 
