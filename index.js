@@ -177,16 +177,13 @@ function showGif(whatGif,whatWinner){
     }else if ( whatGif == "scissor" && whatWinner == "computer"){
         scissorGif.src="./images/computerScissor.gif"
     }else if ( whatGif == "paper" && whatWinner == "computer"){
-        //unreverseGif(paperGif)
-        paperGif.src="./images/paperWin.gif"
-        unreverseGif(paperGif)
+        paperGif.src="./images/computerPaper.gif"
     }else if( whatGif == "rock" && whatWinner == "user"){
         rockGif.src="./images/userRock.gif"
     }else if ( whatGif == "scissor" && whatWinner == "user"){
         scissorGif.src="./images/userScissor.gif"
     }else if ( whatGif == "paper" && whatWinner == "user"){
-        paperGif.src="./images/paperWin.gif"
-        reverseGif(paperGif)
+        paperGif.src="./images/userPaper.gif"
     }
 }
 
