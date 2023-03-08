@@ -129,12 +129,10 @@
     }
     
    
- //#todo
-    //hide gifs before each round again
+ //#todo bad performance
     function callBackGif() {
-        while (gifContainer.firstChild) {
-          gifContainer.removeChild(gifContainer.firstChild);
-        }
+        const gifContainer = document.querySelector("#gifContainer");
+        gifContainer.innerHTML = "";
       }
 
 
