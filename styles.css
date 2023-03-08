@@ -52,18 +52,10 @@ body{
 
 .gifContainer{
     width: 300px;
-    height: auto;
-    position: relative;
+    height: 170px;
 }
 
-.firstGif{
-    position: relative;
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-}
-.allOtherGifs{
-    position: absolute;
+.gif{
     width: 300px;
     height: auto;
     border-radius: 10px;
